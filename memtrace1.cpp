@@ -45,7 +45,7 @@ VOID Instruction(INS ins, void *v) {
       INS_InsertCall(ins,
           IPOINT_BEFORE,
           (AFUNPTR) ReadAccess,
-          IARG_MEMORYREAD_EA,
+          IARG_MEMORYREAD_EA, ii,
           IARG_END);
     }
     // Record write access
@@ -53,7 +53,7 @@ VOID Instruction(INS ins, void *v) {
       INS_InsertCall(ins,
           IPOINT_BEFORE,
           (AFUNPTR) WriteAccess,
-          IARG_MEMORYREAD_EA,
+          IARG_MEMORYREAD_EA, ii,
           IARG_END);
     }
   }
